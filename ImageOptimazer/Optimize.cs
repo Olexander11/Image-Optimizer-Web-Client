@@ -155,7 +155,7 @@ namespace ImageOptimizer
       
         private void toolStripLabelParam_Click(object sender, EventArgs e)
         {
-            var newForm = new Parameters {FormBorderStyle = FormBorderStyle.FixedDialog, MaximizeBox = false, MinimizeBox = false};
+            var newForm = new Parameters();
             newForm.ShowDialog(this);
         }
 
@@ -181,7 +181,7 @@ namespace ImageOptimizer
         /// <param name="e"></param>
         private void toolStripLabelSettings_Click(object sender, EventArgs e)
         {
-            var newForm = new Settings {FormBorderStyle = FormBorderStyle.FixedDialog, MaximizeBox = false, MinimizeBox = false};
+            var newForm = new Settings();
             newForm.ShowDialog(this);
         }
     }

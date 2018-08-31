@@ -21,9 +21,7 @@ namespace ImageOptimizer
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            MessageBox.Show("There was an unpredictable mistake. The program will be closed.");
-            Application.Exit();
-            
+            MessageBox.Show("There was an unpredictable mistake: " + Environment.NewLine + e.Exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

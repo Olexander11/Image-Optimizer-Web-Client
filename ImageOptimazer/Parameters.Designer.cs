@@ -76,6 +76,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.checkBoxLoosy);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Parameters";
             this.Text = "Parameters";
             this.ResumeLayout(false);
