@@ -34,7 +34,9 @@ namespace ImageOptimizer
         }
 
 
-        // send image file to kraken.io API for further optimization
+        /// <summary>
+        /// send image file to kraken.io API for further optimization
+        /// </summary>
         public void SendImage()
         {
             bool isLossy = (Parameter != null) && Convert.ToBoolean(Parameter["Lossy"]);
@@ -52,7 +54,9 @@ namespace ImageOptimizer
             }
         }
 
-        // load optimized image file
+        /// <summary>
+        ///  load optimized image file
+        /// </summary>
         public void LoadImage()
         {
             try

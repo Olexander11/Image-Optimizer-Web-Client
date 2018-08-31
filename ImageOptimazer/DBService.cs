@@ -29,7 +29,11 @@ namespace ImageOptimizer
             }
         }
 
-        //save configuration settings
+        /// <summary>
+        /// save configuration settings
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
         public void SetConfigurationSettings(string key, string value)
         {
             using (var con = new OleDbConnection(_connectionString))
@@ -45,7 +49,10 @@ namespace ImageOptimizer
             }
         }
 
-        //read configuration settings
+        /// <summary>
+        /// read configuration settings
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<string, string> SettingsReader()
         {
             var settings = new Dictionary<string, string>();
@@ -68,7 +75,10 @@ namespace ImageOptimizer
             }
         }
 
-        //save new image file data
+        /// <summary>
+        /// save new image file data
+        /// </summary>
+        /// <param name="row"></param>
         public void SaveNewData(TableItem row)
         {
             using (var con = new OleDbConnection(_connectionString))
@@ -89,7 +99,10 @@ namespace ImageOptimizer
             }
         }
 
-        // update context for image file
+        /// <summary>
+        /// update context for image file
+        /// </summary>
+        /// <param name="item"></param>
         public void UpdateImageData(TableItem item)
         {
             using (var con = new OleDbConnection(_connectionString))
@@ -108,7 +121,10 @@ namespace ImageOptimizer
             }
         }
 
-        //delete info about image file
+        /// <summary>
+        /// delete info about image file
+        /// </summary>
+        /// <param name="path"></param>
         public void DeleteImadgeData(string path)
         {
             using (var con = new OleDbConnection(_connectionString))
@@ -123,7 +139,11 @@ namespace ImageOptimizer
             }
         }
 
-        //checking uniqueness for image file 
+        /// <summary>
+        /// checking uniqueness for image file 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public bool IsFindImadgeData(string path)
         {
             bool result = false;
@@ -150,7 +170,10 @@ namespace ImageOptimizer
             return result;
         }
 
-        //load context for unworked image file from previous sessions
+        /// <summary>
+        /// load context for unworked image file from previous sessions
+        /// </summary>
+        /// <returns></returns>
         public List<TableItem> DataInitialization()
         {
             var rowList = new List<TableItem>();
@@ -185,7 +208,9 @@ namespace ImageOptimizer
             return rowList;
         }
 
-        //create new data base
+        /// <summary>
+        /// create new data base
+        /// </summary>
         public void CreateNewDB()
         {
             using (var con = new OleDbConnection(_connectionString))

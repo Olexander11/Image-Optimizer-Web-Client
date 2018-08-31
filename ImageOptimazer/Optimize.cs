@@ -29,7 +29,14 @@ namespace ImageOptimizer
             _manager.InitializationOldData(); // initializing past data
         }
 
-        //change row context
+
+        /// <summary>
+        /// change row context
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
         private void ChangeRow(object sender, TableItem e)
         {
             DataGridViewRow row = dataGridView1.Rows.Cast<DataGridViewRow>().FirstOrDefault(r => r.Cells[0].Value.ToString().Equals(e.FileName.FullName));
@@ -43,15 +50,22 @@ namespace ImageOptimizer
                 }
             }
         }
+        /// <summary>
+        /// add message to info listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
-        //add message to info listbox
         private void ShowMessage(object sender, string e)
         {
             Action action = () => listBoxInfo.Items.Add(e);
             Invoke(action);
         }
-
-        //add rows to table
+        /// <summary>
+        /// add rows to table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddRowsToGrid(object sender, List<TableItem> e)
         {
             foreach (TableItem element in e)
@@ -59,8 +73,12 @@ namespace ImageOptimizer
                 dataGridView1.Rows.Add(element.FileName, element.SizeBefore, element.SizeAfter, element.StatusItem, "");
             }
         }
-
-        //drag image file
+        /// <summary>
+        /// drag image file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+     
         private void Form1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -79,7 +97,13 @@ namespace ImageOptimizer
             }
         }
 
-        //drop image file
+
+        /// <summary>
+        /// drop image file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void Form1_DragDrop(object sender, DragEventArgs e)
         {
             var files = (string[]) e.Data.GetData(DataFormats.FileDrop);
@@ -94,7 +118,15 @@ namespace ImageOptimizer
             buttonDeleteRow.Enabled = true;
         }
 
-        //delete row from table
+        /// <summary>
+        /// delete row from table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+
+
+
         private void ButtonDeleteRow_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Do you really want to delete this line?", "Confirmation", MessageBoxButtons.YesNo);
@@ -114,14 +146,24 @@ namespace ImageOptimizer
             }
         }
 
-        //set parameter 
+        /// <summary>
+        /// set parameter 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+      
         private void toolStripLabelParam_Click(object sender, EventArgs e)
         {
             var newForm = new Parameters {FormBorderStyle = FormBorderStyle.FixedDialog, MaximizeBox = false, MinimizeBox = false};
             newForm.ShowDialog(this);
         }
 
-        //close program
+        /// <summary>
+        /// close program
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Do you really want exit this program?", "Confirmation", MessageBoxButtons.YesNo);
@@ -132,7 +174,11 @@ namespace ImageOptimizer
             }
         }
 
-        //set settings for kraken.io (keys)
+        /// <summary>
+        /// set settings for kraken.io (keys)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void toolStripLabelSettings_Click(object sender, EventArgs e)
         {
             var newForm = new Settings {FormBorderStyle = FormBorderStyle.FixedDialog, MaximizeBox = false, MinimizeBox = false};

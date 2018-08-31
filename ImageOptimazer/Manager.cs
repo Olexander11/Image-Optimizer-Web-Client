@@ -40,7 +40,9 @@ namespace ImageOptimizer
             Task.Run(() => GetStartedWithKraken());
         }
 
-        //close program
+        /// <summary>
+        /// close program
+        /// </summary>
         public void CloseOptimization()
         {
             lock (Locker)
@@ -63,7 +65,10 @@ namespace ImageOptimizer
         }
 
 
-        //delete row from table
+        /// <summary>
+        /// delete row from table
+        /// </summary>
+        /// <param name="fileName"></param>
         public void DeleteRow(string fileName)
         {
             TableItem itemToRemove = RowItem.Single(r => r.FileName.FullName == fileName);
@@ -74,7 +79,9 @@ namespace ImageOptimizer
             }
         }
 
-        //make optimization
+        /// <summary>
+        /// make optimization
+        /// </summary>
         private void GetStartedWithKraken()
         {
             InitializationSettings();
@@ -198,7 +205,10 @@ namespace ImageOptimizer
         }
 
 
-        //rewrite optimized file
+        /// <summary>
+        /// rewrite optimized file
+        /// </summary>
+        /// <param name="fileName"></param>
         private void RewriteFile(FileInfo fileName)
         {
             var backFile = new FileInfo(fileName.FullName + ".back");
@@ -220,7 +230,10 @@ namespace ImageOptimizer
             Settings = _bService.SettingsReader();
         }
 
-        //save settings
+        /// <summary>
+        /// save settings
+        /// </summary>
+        /// <param name="settings"></param>
         public void SaveSettings(Dictionary<string, string> settings)
         {
             foreach (var item in settings)
@@ -233,7 +246,10 @@ namespace ImageOptimizer
         }
 
 
-        // add new image files to table by draging
+        /// <summary>
+        ///  add new image files to table by draging
+        /// </summary>
+        /// <param name="filename"></param>
         public void AddNewByDraging(string filename)
         {
             if (!HaveThisFileName(filename))
