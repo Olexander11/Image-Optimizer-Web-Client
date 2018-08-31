@@ -1,5 +1,5 @@
 # Image-Optimizer-Web-Client
-Myself study progects
+Myself study project
 
 This is a Windows desktop client app for optimize images file be using kraken.io API
 
